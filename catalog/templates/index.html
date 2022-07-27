@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Catalog</title>
+
+  </head>
+  <body>
+
+  <header>
+    <div>
+      <h3>Catalog</h3>
+
+        <a href="{% url "index" %}">Home</a>
+        <a href="{% url "catalog:get_books" %}">Books</a>
+        <a href="{% url "catalog:get_authors" %}">Authors</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+
+    <h1>Book's Database</h1><br>
+
+    <h1>Author's Database</h1><br>
+
+
+    {% endblock %}
+    <br><br>
+  </main>
+
+
+</div>
+
+  </body>
+</html>
