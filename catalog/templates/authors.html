@@ -5,27 +5,16 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Birthdate</th>
-      <th scope="col">Grade</th>
-      <th scope="col">Age</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount of books</th>
     </tr>
   </thead>
   <tbody>
-    {% for book in books %}
+    {% for author in authors %}
       <tr>
-        <th scope="row">{{ book.id }}</th>
-        <td>{{ book.name }}</td>
-        <td>{{ book.pages }}</td>
-        <td>{{ book.price }}</td>
-        <td>{{ book.rating }}</td>
-        <td>{{ book.authors }}</td>
-        <td>{{ book.publisher }}</td>
-        <td>{{ book.pubdate }}</td>
+        <th scope="row">{{ author.id }}</th>
+        <th scope="col"> <a href="{% url 'choose_author' author.id  %}">{{ author.name }}</a></th>
+        <th scope="col">{{ author.num_books }}</th>
     {% endfor %}
   </tbody>
 </table>

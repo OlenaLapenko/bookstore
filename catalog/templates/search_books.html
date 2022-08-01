@@ -1,15 +1,6 @@
 {% extends "index.html" %}
 
 {% block content %}
-
-<form role="search" method="GET" action="{% url 'search_books' %}">
-        <input type="search" placeholder="Search" aria-label="Search" name="search">
-        <button type="submit">Search</button>
-</form><br>
-
-<p>Average price: {{ avg_price.avg|floatformat:2 }} </p>
-<p>Average rating: {{ avg_rating.avg|floatformat:2 }} </p>
-
 <table>
   <thead>
     <tr>
@@ -28,10 +19,10 @@
         <td>{% for author in book.authors.all %}
         {{ author.name }}
         {% endfor %}</td>
-        <td>{{ book.publisher.name }}</td>
+        <td>{{ book.publisher }}</td>
         <td>{{ book.pubdate }}</td>
-      </tr>
     {% endfor %}
   </tbody>
 </table>
 {% endblock %}
+

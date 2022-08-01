@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount of books</th>
+       <th scope="col">Average price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for store in stores %}
+      <tr>
+        <th scope="row">{{ store.id }}</th>
+        <th scope="col"> <a href="{% url 'choose_store' store.id  %}">{{ store.name }}</a></th>
+        <th scope="row">{{ store.num_books }}</th>
+        <th scope="row">{{ store.avg_price|floatformat:2 }}</th>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

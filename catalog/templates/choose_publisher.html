@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block content %}
+<p>Amount of books: {{ publisher.num_books }} </p><br>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row">{{ publisher.id }}</th>
+        <td>{{ publisher.name }}</td>
+        <td>{{ publisher.city }}</td>
+  </tbody>
+</table>
+{% endblock %}

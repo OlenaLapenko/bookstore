@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Pages</th>
+      <th scope="col">Price</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Authors</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Pubdate</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row">{{ book.id }}</th>
+        <th scope="row">{{ book.name }}</th>
+        <td>{{ book.pages }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.rating }}</td>
+        <td>{% for author in book.authors.all %}
+        {{ author.name }}
+        {% endfor %}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.pubdate }}</td>
+  </tbody>
+</table>
+{% endblock %}

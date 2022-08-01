@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 faker = "*"
 django = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+django-crispy-forms = "*"
+flake8 = "*"
 
 [dev-packages]
 

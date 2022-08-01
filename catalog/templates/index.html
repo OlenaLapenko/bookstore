@@ -2,35 +2,26 @@
 <html lang="en">
   <head>
     <title>Catalog</title>
-
   </head>
   <body>
-
-  <header>
-    <div>
-      <h3>Catalog</h3>
-
-        <a href="{% url "index" %}">Home</a>
-        <a href="{% url "catalog:get_books" %}">Books</a>
-        <a href="{% url "catalog:get_authors" %}">Authors</a>
-      </nav>
-    </div>
-  </header>
-
+      <h2>Catalog:</h2>
+      <ul type="square">
+          <li><a href="{% url 'authors' %}">All authors</a><br></li>
+          <li><a href="{% url 'publishers' %}">All publishers</a></li>
+          <li><a href="{% url 'stores' %}">All stores</a></li>
+          <li><a href="{% url 'books' %}">All books</a></li>
+        </ul>
+      <br>
   <main>
     {% block content %}
 
-    <h1>Book's Database</h1><br>
-
-    <h1>Author's Database</h1><br>
-
+    <p>In this catalog now:</p>
+      <p>Authors - {{ amount_authors }}</p>
+      <p>Publishers - {{ amount_publishers }}</p>
+      <p>Stores - {{ amount_stores }}</p>
+      <p>Books - {{ amount_books }}</p>
 
     {% endblock %}
-    <br><br>
   </main>
-
-
-</div>
-
   </body>
 </html>

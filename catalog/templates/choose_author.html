@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<p>Amount of books: {{ author.num_books }} </p><br>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row">{{ author.id }}</th>
+        <th scope="col">{{ author.name }}</th>
+        {% if author.birthdate %}
+          <td>{{ author.age }}</td>
+        {% else %}
+          <td>Undefined age</td>
+        {% endif %}
+        <th scope="col">{{ num_books }}</th>
+  </tbody>
+</table>
+{% endblock %}

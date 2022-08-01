@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount of Books</th>
+      <th scope="col">Average Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for publisher in publishers %}
+      <tr>
+        <th scope="row">{{ publisher.id }}</th>
+        <th scope="col"> <a href="{% url 'choose_publisher' publisher.id  %}">{{ publisher.name }}</a></th>
+        <th scope="row">{{ publisher.num_books }}</th>
+        <th scope="row">{{ publisher.avg_price|floatformat:2 }}</th>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
